@@ -11,6 +11,9 @@ class Book(models.Model):
     available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    cover_image=models.ImageField(upload_to='covers/',null=True, blank=True)
+    pdf_file=models.FileField(upload_to='pdfs/', null=True, blank=True)
+    
     
     def __str__(self):
         return f"{self.title} by {self.author}"
